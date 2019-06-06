@@ -1,0 +1,17 @@
+1.3 - 28/3/2019
+Updated:
+	- featured product layout variable
+	- Update config Plugin WPBakery 5.7
+	- WPBakery
+
+1.2 - 2/15/2019
+	- Update Plugin WPBakery 5.7
+	- Add Home Demo 5
+	- Fix Error Plugin Option Tree On php 7
+	- Update File .pot
+	- Update data
+
+1.1 - 1/28/2019
+	- Fix css current menu home 3
+	- Add widget price filter
+

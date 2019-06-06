@@ -1,0 +1,4 @@
+2019-04-01T06:12:05+00:00 CRITICAL Maximum execution time of 600 seconds exceeded in C:\wamp64\www\printhub\wp-includes\Requests\Transport\cURL.php on line 462
+
+2019-04-01T06:22:48+00:00 CRITICAL Maximum execution time of 600 seconds exceeded in C:\wamp64\www\printhub\wp-includes\Requests\Transport\cURL.php on line 462
+

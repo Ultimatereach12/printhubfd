@@ -1,0 +1,45 @@
+<?php
+$attr = array(
+	'size'		   => $size,
+	'excerpt'		   => $excerpt,
+	'animation' => $animation,
+    'column'            => $column,
+	'item_style'      => $item_style,
+	'style'		      => 'grid',
+    'item_style_list'       => '',
+	'pagination'		=> $pagination,
+	);
+?>
+<div class="block-element <?php echo esc_attr($el_class);?> js-content-wrap clearfix">
+    <div class="products-wrap">
+        <div class="row list-product-wrap js-content-main">
+        	<?php
+        	if($portfolio_query->have_posts()) {
+                while($portfolio_query->have_posts()) {
+                    $portfolio_query->the_post();
+                    $attr['count'] = $count;
+        			s7upf_get_template_portfolio('grid/grid',$item_style,$attr,true);
+                    $count++;
+        		}
+        	}
+        	?>
+    	</div>
+    	<?php
+    	if($pagination == 'load-more' && $max_page > 1){
+            $data_load = array(
+                "args"        => $args,
+                "attr"        => $attr,
+                );
+            $data_loadjs = json_encode($data_load);
+            echo    '<div class="btn-loadmore">
+                        <a href="#" class="product-loadmore loadmore" 
+                            data-load="'.esc_attr($data_loadjs).'" data-paged="1" 
+                            data-maxpage="'.esc_attr($max_page).'">
+                            '.esc_html__("Load more","druck").'
+                        </a>
+                    </div>';
+        }
+        if($pagination == 'pagination') s7upf_get_template_woocommerce('loop/pagination','',array('wp_query'=>$portfolio_query),true);
+    	?>
+    </div>
+</div>
